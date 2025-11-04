@@ -37,7 +37,7 @@ export default function Index() {
           Seja bem-vindo ao Info<Text style={styles.highlight}>Fatec</Text>!
         </Text>
         <Text style={styles.instructionText}>
-          Selecione uma categoria para começar:
+          Selecione uma categoria para começar a explorar:
         </Text>
 
         <View style={styles.buttonContainer}>
