@@ -2,22 +2,26 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-type CultureCardProps = {
-  iconName: keyof typeof Ionicons.glyphMap;
+type CardProps = {
   title: string;
-  description: string;
+  iconName?: keyof typeof Ionicons.glyphMap;
+  description?: string;
   onPress: () => void;
 }
 
-export default function CultureCard({ iconName, title, description, onPress }: CultureCardProps) {
+export function Card({ title, onPress, iconName, description }: CardProps) {
   return (
     <TouchableOpacity style={styles.card} onPress={onPress}>
-      <View style={styles.iconContainer}>
-        <Ionicons name={iconName} size={30} color="#BF2633" />
-      </View>
+      {iconName && (
+        <View style={styles.iconContainer}>
+          <Ionicons name={iconName} size={30} color="#BF2633" />
+        </View>
+      )}
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description} numberOfLines={3}>{description}</Text>
+        {description && (
+          <Text style={styles.description} numberOfLines={3}>{description}</Text>
+        )}
       </View>
     </TouchableOpacity>
   );

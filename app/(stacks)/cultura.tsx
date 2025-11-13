@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import AppHeader from '@/components/Header';
-import CultureCard from '@/components/CultureCard';
+import { Card } from '@/components/Card';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function CultureScreen() {
@@ -48,7 +48,7 @@ export default function CultureScreen() {
         </Text>
         <View style={styles.cardList}>
           {cultureData.map((item) => (
-            <CultureCard
+            <Card
               key={item.id}
               iconName={item.icon}
               title={item.title}
