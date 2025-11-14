@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 type CardProps = {
@@ -7,11 +7,12 @@ type CardProps = {
   iconName?: keyof typeof Ionicons.glyphMap;
   description?: string;
   onPress: () => void;
+  style?: ViewStyle;
 }
 
-export function Card({ title, onPress, iconName, description }: CardProps) {
+export function Card({ title, onPress, iconName, description, style }: CardProps) {
   return (
-    <TouchableOpacity style={styles.card} onPress={onPress}>
+    <TouchableOpacity style={[styles.card, style]} onPress={onPress}>
       {iconName && (
         <View style={styles.iconContainer}>
           <Ionicons name={iconName} size={30} color="#BF2633" />
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: 400,
     color: '#262014',
     marginBottom: 4,
   },
