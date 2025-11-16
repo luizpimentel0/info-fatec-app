@@ -6,7 +6,6 @@ import { courses } from '@/constants/courses';
 
 export default function SobreScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
-  console.log(slug)
 
   if (!slug || !courses[slug]) {
     return (
