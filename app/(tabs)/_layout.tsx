@@ -9,6 +9,7 @@ const homeCategories = [
   { name: 'Educação', icon: 'book-outline' as const, href: '/(stacks)/educacao' },
   { name: 'Empregos', icon: 'business-outline' as const, href: '/(stacks)/empregos' },
   { name: 'Segurança', icon: 'shield-checkmark-outline' as const, href: '/(stacks)/seguranca' },
+  { name: 'Nosso time', icon: 'sparkles-outline' as const, href: '/(stacks)/time' },
 ];
 
 type CategoryButtonProps = {
